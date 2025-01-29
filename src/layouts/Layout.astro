@@ -1,0 +1,126 @@
+---
+interface Props {
+  title: string;
+}
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import '../styles/variables.css';
+import '../styles/toastify.css';
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="NebulaCode - Développement Web Innovant" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Romain Baert - Développeur Full-Stack Freelance</title>
+  </head>
+  <body>
+    <slot />
+    <ToastContainer 
+      position="top-right"
+      autoClose={3000}
+      hideProgressBar={false}
+      newestOnTop
+      closeOnClick
+      rtl={false}
+      draggable
+      pauseOnHover
+      limit={3}
+      client:load
+    />
+    <footer>
+      <div class="social-links">
+        <a href="https://fr.linkedin.com/in/romain-baert" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/ampersander" target="_blank" rel="noopener noreferrer" class="social-link">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="footer-links">
+        <a href="/mentions-legales" class="footer-link">Mentions légales</a>
+      </div>
+      <p class="copyright">Explorons ensemble l'univers du développement web</p>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+  :root {
+    --primary-dark: #0a0a1f;
+    --secondary-dark: #1a1a3a;
+    --neon-blue: #00c3ff;
+    --neon-purple: #ff64ff;
+    --text-light: #ffffff;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  footer {
+    text-align: center;
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .social-link {
+    color: var(--neon-blue);
+    font-size: 1.5rem;
+    transition: all var(--transition-speed) ease;
+  }
+
+  .social-link:hover {
+    color: var(--neon-purple);
+    transform: translateY(-3px);
+  }
+
+  .footer-links {
+    margin: var(--spacing-md) 0;
+  }
+
+  .footer-link {
+    color: var(--neon-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all var(--transition-speed) ease;
+  }
+
+  .footer-link:hover {
+    color: var(--neon-purple);
+    text-shadow: 0 0 5px rgba(0, 195, 255, 0.5);
+  }
+
+  .copyright {
+    color: #666;
+    font-size: 0.8rem;
+  }
+</style>

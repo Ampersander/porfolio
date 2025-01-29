@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import About from '../components/About.astro';
+import Skills from '../components/Skills.astro';
+import Experience from '../components/Experience.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<Layout title="Accueil">
+  <Header />
+  <main>
+    <About />
+    <Skills />
+    <Experience />
+    <Contact />
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+</style>

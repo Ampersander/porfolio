@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Mentions Légales">
+  <main class="legal">
+    <h1>Mentions Légales</h1>
+    
+    <section>
+      <h2>Éditeur du site</h2>
+      <p>
+        Ce site est édité par Romain Baert, entrepreneur individuel.<br>
+        Siège social : [Votre adresse]<br>
+        SIRET : [Votre numéro SIRET]<br>
+        Email : romain.baert2@gmail.com
+      </p>
+    </section>
+
+    <section>
+      <h2>Hébergement</h2>
+      <p>
+        Ce site est hébergé par [Nom de l'hébergeur]<br>
+        Adresse : [Adresse de l'hébergeur]<br>
+        Téléphone : [Téléphone de l'hébergeur]
+      </p>
+    </section>
+
+    <section>
+      <h2>Protection des données personnelles</h2>
+      <p>
+        Les informations recueillies via le formulaire de contact sont destinées à Romain Baert 
+        dans le but de répondre à votre demande. Ces données sont conservées pendant la durée 
+        nécessaire au traitement de votre demande et sont destinées uniquement à Romain Baert.
+      </p>
+      <p>
+        Conformément à la loi « Informatique et Libertés » du 6 janvier 1978 modifiée et au 
+        Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, 
+        de rectification, de suppression et d'opposition aux données personnelles vous concernant. 
+        Pour exercer ces droits, contactez-nous à l'adresse : romain.baert2@gmail.com
+      </p>
+    </section>
+
+    <section>
+      <h2>Propriété intellectuelle</h2>
+      <p>
+        L'ensemble du contenu de ce site (textes, images, logos, etc.) est la propriété exclusive 
+        de Romain Baert ou fait l'objet d'une autorisation d'utilisation. Toute reproduction, 
+        représentation, modification ou adaptation totale ou partielle du site et/ou de tout ou 
+        partie des éléments se trouvant sur le site est interdite sans accord préalable.
+      </p>
+    </section>
+
+    <a href="/" class="back-link">
+      <i class="fas fa-arrow-left"></i> Retour à l'accueil
+    </a>
+  </main>
+</Layout>
+
+<style>
+  .legal {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: var(--neon-blue);
+    text-align: center;
+    margin-bottom: 3rem;
+    text-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
+  }
+
+  section {
+    background: rgba(0, 195, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 195, 255, 0.1);
+  }
+
+  h2 {
+    color: var(--neon-purple);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--neon-blue);
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .back-link:hover {
+    color: var(--neon-purple);
+    transform: translateX(-5px);
+  }
+
+  @media (max-width: 768px) {
+    .legal {
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
