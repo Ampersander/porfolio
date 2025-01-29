@@ -1,26 +1,121 @@
-# NebulaDev Portfolio
+# Portfolio Romain Baert - Développeur Full-Stack Freelance
 
-Ce portfolio professionnel présente les services et compétences de NebulaDev dans un design moderne inspiré de l'espace.
+![Astro Badge](https://img.shields.io/badge/Astro-FF5D01?logo=astro&logoColor=fff&style=for-the-badge)
+![React Badge](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=for-the-badge)
+![TypeScript Badge](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=for-the-badge)
 
-## Configuration requise
+## À propos
 
-- Un navigateur web moderne (Chrome, Firefox, Safari, Edge)
-- Connexion Internet pour charger les polices et icônes
+Portfolio professionnel créé avec Astro, mettant en valeur mes compétences en développement Full-Stack. Le site présente un design moderne inspiré de l'espace, avec une attention particulière portée à l'expérience utilisateur et aux performances.
 
-## Ressources externes utilisées
+### Caractéristiques
 
-- Google Fonts (Orbitron, Montserrat)
-- Font Awesome 6.0.0
-- Image de fond : Ajoutez une image nommée `nebula-bg.jpg` dans le dossier racine
+- Design responsive et moderne
+- Animations fluides et interactives
+- Optimisation SEO poussée
+- Formulaire de contact interactif
+- Thème spatial personnalisé
+- Notifications toast élégantes
+- Performance optimisée avec Astro
+
+## Technologies
+
+- **Framework** : [Astro](https://astro.build/)
+- **UI Components** : [React](https://reactjs.org/)
+- **Styling** : CSS Modules & Variables
+- **Notifications** : React-Toastify
+- **Icons** : Font Awesome
+- **Fonts** : Orbitron & Montserrat
+
+## Installation
+
+```bash
+# Cloner le projet
+git clone https://github.com/ampersander/portfolio-astro.git
+
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
+npm run dev
+
+# Build pour la production
+npm run build
+```
+
+## Structure du Projet
+
+```
+/
+├── public/
+│   └── assets/
+├── src/
+│   ├── components/
+│   │   ├── About.astro
+│   │   ├── Contact.astro
+│   │   ├── ContactForm.jsx
+│   │   ├── Experience.astro
+│   │   ├── Hero.astro
+│   │   └── Projects.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   ├── pages/
+│   │   └── index.astro
+│   └── styles/
+│       ├── components/
+│       ├── variables.css
+│       ├── global.css
+│       └── toastify.css
+└── package.json
+```
 
 ## Personnalisation
 
-Pour personnaliser le portfolio :
+Le site utilise un système de variables CSS pour une personnalisation facile :
 
-1. Modifiez le contenu dans `index.html`
-2. Ajustez les couleurs dans `styles.css` (variables CSS en début de fichier)
-3. Modifiez les animations dans `script.js`
+```css
+:root {
+  --neon-blue: #00c3ff;
+  --neon-purple: #8a2be2;
+  --font-heading: 'Orbitron', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+}
+```
 
-## Note importante
+## Configuration
 
-N'oubliez pas d'ajouter votre propre image de fond `nebula-bg.jpg` dans le dossier racine du projet.
+Les principales configurations se trouvent dans :
+- `astro.config.mjs` : Configuration Astro
+- `src/styles/variables.css` : Variables CSS globales
+- `public/robots.txt` : Configuration SEO
+
+## Responsive Design
+
+Le site est entièrement responsive avec des breakpoints pour :
+- Mobile : < 480px
+- Tablette : < 768px
+- Desktop : > 1024px
+
+## Déploiement
+
+```bash
+# Build du projet
+npm run build
+
+# Preview de la version de production
+npm run preview
+```
+
+## License
+
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+
+## Contact
+
+- Email : romain.baert2@gmail.com
+- LinkedIn : [Romain Baert](https://fr.linkedin.com/in/romain-baert)
+- GitHub : [@ampersander](https://github.com/ampersander)
+
+---
+
+Développé avec ❤️ par Romain Baert
