@@ -9,16 +9,39 @@ export default function ContactForm() {
     message: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
-    toast.success("Message envoyé ! Je vous recontacterai bientôt.", {
-      position: "top-right",
-      autoClose: 3000,
-      theme: "dark",
-    });
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setFormData({ name: '', email: '', message: '' });
+      if (response.ok) {
+        toast.success("Message envoyé ! Je vous recontacterai bientôt.", {
+          position: "top-right",
+          autoClose: 3000,
+          theme: "dark",
+        });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        toast.error("Une erreur est survenue lors de l'envoi du message.", {
+          position: "top-right",
+          autoClose: 3000,
+          theme: "dark",
+        });
+      }
+    } catch (error) {
+      toast.error("Une erreur est survenue lors de l'envoi du message.", {
+        position: "top-right",
+        autoClose: 3000,
+        theme: "dark",
+      });
+    }
   };
 
   const handleChange = (e) => {

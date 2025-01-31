@@ -36,12 +36,29 @@ git clone https://github.com/ampersander/portfolio-astro.git
 # Installer les dépendances
 npm install
 
+# Configurer les variables d'environnement
+cp .env.example .env
+# Puis éditer le fichier .env avec vos informations :
+# EMAIL= votre adresse email
+# EMAIL_PASSWORD= votre mot de passe d'application email
+
 # Lancer le serveur de développement
 npm run dev
 
 # Build pour la production
 npm run build
 ```
+
+## Configuration Email
+
+Le formulaire de contact utilise Nodemailer pour envoyer les messages via SMTP. Pour configurer l'envoi d'emails :
+
+1. Copiez le fichier `.env.example` en `.env`
+2. Remplissez les variables suivantes dans votre `.env` :
+   - `EMAIL` : Votre adresse email (hotmail.com/outlook.com)
+   - `EMAIL_PASSWORD` : Votre mot de passe d'application
+   
+Note : Pour des raisons de sécurité, si vous utilisez un compte Microsoft, vous devrez générer un "mot de passe d'application" spécifique dans les paramètres de sécurité de votre compte Microsoft.
 
 ## Structure du Projet
 
@@ -112,7 +129,7 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 ## Contact
 
-- Email : romain.baert2@gmail.com
+- Email : nebulacode@hotmail.com
 - LinkedIn : [Romain Baert](https://fr.linkedin.com/in/romain-baert)
 - GitHub : [@ampersander](https://github.com/ampersander)
 

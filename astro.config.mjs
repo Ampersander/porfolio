@@ -5,4 +5,5 @@ import react from '@astrojs/react';
 export default defineConfig({
   site: 'https://nebulacode.com',
   integrations: [react()],
+  output: 'server',
 });
