@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",
-    "astro": "^4.0.7",
+    "@astrojs/vercel": "^8.0.4",
+    "astro": "^5.2.2",
     "nodemailer": "^6.10.0",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",
