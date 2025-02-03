@@ -76,7 +76,9 @@ Le formulaire de contact utilise EmailJS pour envoyer les messages. Pour configu
 │   │   ├── Contact.astro
 │   │   ├── ContactForm.jsx
 │   │   ├── Experience.astro
-│   │   ├── Hero.astro
+│   │   ├── Services.astro
+│   │   └── Skills.astro
+│   ├── icons/
 │   │   └── Projects.astro
 │   ├── layouts/
 │   │   └── Layout.astro
