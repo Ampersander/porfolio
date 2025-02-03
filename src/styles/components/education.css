@@ -1,0 +1,33 @@
+.education-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .education-card {
+    background: rgba(26, 26, 58, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease;
+  }
+
+  .education-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .education-card h3 {
+    color: var(--neon-blue);
+    margin-bottom: 1rem;
+  }
+
+  .education-card p {
+    margin-bottom: 0.5rem;
+  }
+
+  .date {
+    color: var(--neon-purple);
+  }

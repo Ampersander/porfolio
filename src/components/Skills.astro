@@ -1,4 +1,6 @@
 ---
+import '../styles/components/skills.css';
+
 const skills = [
   { name: 'Symfony', icon: 'fa-symfony' },
   { name: 'NestJS', icon: 'fa-node-js' },
@@ -22,82 +24,3 @@ const skills = [
     ))}
   </div>
 </section>
-
-<style>
-  .skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .skill-card {
-    background: rgba(0, 195, 255, 0.05);
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 195, 255, 0.1);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .skill-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(0, 195, 255, 0.3);
-    box-shadow: 0 5px 15px rgba(0, 195, 255, 0.2);
-  }
-
-  .skill-icon {
-    background: rgba(0, 195, 255, 0.1);
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-    transition: all 0.3s ease;
-  }
-
-  .skill-card:hover .skill-icon {
-    background: rgba(0, 195, 255, 0.2);
-    transform: scale(1.1);
-  }
-
-  .skill-card i {
-    font-size: 2.5rem;
-    color: var(--neon-blue);
-    transition: all 0.3s ease;
-  }
-
-  .skill-card:hover i {
-    color: #fff;
-    text-shadow: 0 0 10px var(--neon-blue);
-  }
-
-  .skill-card span {
-    display: block;
-    margin-top: 1rem;
-    font-weight: 500;
-    color: #fff;
-    text-shadow: 0 0 5px rgba(0, 195, 255, 0.5);
-  }
-
-  @media (max-width: 768px) {
-    .skills-container {
-      gap: 1rem;
-    }
-
-    .skill-icon {
-      width: 60px;
-      height: 60px;
-    }
-
-    .skill-card i {
-      font-size: 2rem;
-    }
-  }
-</style>

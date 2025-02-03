@@ -1,0 +1,35 @@
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: rgba(26, 26, 58, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+.service-card i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--neon-purple);
+}
+
+.service-card h3 {
+    color: var(--neon-blue);
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    opacity: 0.9;
+}

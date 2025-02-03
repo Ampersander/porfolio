@@ -14,7 +14,7 @@ export default function ContactForm() {
     email: '',
     message: ''
   });
-  const [isLoading, setIsLoading] = useState(false); // 🔴 Ajout du state
+  const [isLoading, setIsLoading] = useState(false); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,7 +47,7 @@ export default function ContactForm() {
         theme: "dark",
       });
     } finally {
-      setIsLoading(false); // 🔴 Réactive le bouton après la requête
+      setIsLoading(false); 
     }
   };
 
