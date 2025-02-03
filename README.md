@@ -40,7 +40,9 @@ npm install
 cp .env.example .env
 # Puis éditer le fichier .env avec vos informations :
 # EMAIL= votre adresse email
-# EMAIL_PASSWORD= votre mot de passe d'application email
+# EMAILJS_PUBLICKEY= votre clé publique EmailJS
+# EMAILJS_SERVICE_ID= votre ID de service EmailJS
+# EMAILJS_TEMPLATE_ID= votre ID de template EmailJS
 
 # Lancer le serveur de développement
 npm run dev
@@ -51,14 +53,16 @@ npm run build
 
 ## Configuration Email
 
-Le formulaire de contact utilise Nodemailer pour envoyer les messages via SMTP. Pour configurer l'envoi d'emails :
+Le formulaire de contact utilise EmailJS pour envoyer les messages. Pour configurer l'envoi d'emails :
 
-1. Copiez le fichier `.env.example` en `.env`
-2. Remplissez les variables suivantes dans votre `.env` :
-   - `EMAIL` : Votre adresse email (hotmail.com/outlook.com)
-   - `EMAIL_PASSWORD` : Votre mot de passe d'application
-   
-Note : Pour des raisons de sécurité, si vous utilisez un compte Microsoft, vous devrez générer un "mot de passe d'application" spécifique dans les paramètres de sécurité de votre compte Microsoft.
+1. Créez un compte sur [EmailJS](https://www.emailjs.com/)
+2. Créez un service email et un template
+3. Copiez le fichier `.env.example` en `.env`
+4. Remplissez les variables suivantes dans votre `.env` :
+   - `EMAIL` : Votre adresse email
+   - `EMAILJS_PUBLICKEY` : Votre clé publique EmailJS
+   - `EMAILJS_SERVICE_ID` : L'ID de votre service EmailJS
+   - `EMAILJS_TEMPLATE_ID` : L'ID de votre template EmailJS
 
 ## Structure du Projet
 

@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import emailjs from '@emailjs/browser';
+
+const SERVICE_ID = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.PUBLIC_EMAILJS_PUBLICKEY;
+const TO_EMAIL = import.meta.env.PUBLIC_EMAIL;
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -8,39 +14,40 @@ export default function ContactForm() {
     email: '',
     message: ''
   });
+  const [isLoading, setIsLoading] = useState(false); // 🔴 Ajout du state
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+    setIsLoading(true); // Désactive le bouton
 
-      if (response.ok) {
-        toast.success("Message envoyé ! Je vous recontacterai bientôt.", {
-          position: "top-right",
-          autoClose: 3000,
-          theme: "dark",
-        });
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        toast.error("Une erreur est survenue lors de l'envoi du message.", {
-          position: "top-right",
-          autoClose: 3000,
-          theme: "dark",
-        });
-      }
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: TO_EMAIL
+        },
+        PUBLIC_KEY
+      );
+
+      toast.success("Message envoyé ! Je vous recontacterai bientôt.", {
+        position: "top-right",
+        autoClose: 3000,
+        theme: "dark",
+      });
+      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
+      console.error('Error sending email:', error);
       toast.error("Une erreur est survenue lors de l'envoi du message.", {
         position: "top-right",
         autoClose: 3000,
         theme: "dark",
       });
+    } finally {
+      setIsLoading(false); // 🔴 Réactive le bouton après la requête
     }
   };
 
@@ -63,6 +70,7 @@ export default function ContactForm() {
           onChange={handleChange}
           placeholder="Votre nom"
           required
+          disabled={isLoading} // Désactiver pendant le chargement
         />
       </div>
       <div className="form-group">
@@ -74,6 +82,7 @@ export default function ContactForm() {
           onChange={handleChange}
           placeholder="Votre email"
           required
+          disabled={isLoading}
         />
       </div>
       <div className="form-group">
@@ -84,9 +93,12 @@ export default function ContactForm() {
           onChange={handleChange}
           placeholder="Votre message"
           required
+          disabled={isLoading}
         />
       </div>
-      <button type="submit" className="submit-btn">Envoyer</button>
+      <button type="submit" className="submit-btn" disabled={isLoading}>
+        {isLoading ? "Envoi..." : "Envoyer"} {/* Changer le texte du bouton */}
+      </button>
     </form>
   );
 }

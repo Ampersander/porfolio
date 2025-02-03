@@ -11,9 +11,8 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",
-    "@astrojs/vercel": "^8.0.4",
+    "@emailjs/browser": "^4.4.1",
     "astro": "^5.2.2",
-    "nodemailer": "^6.10.0",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
